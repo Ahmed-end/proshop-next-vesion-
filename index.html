@@ -1,399 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProShop Egypt | Premium Sports Equipment</title>
-    <style>
-        :root {
-            --primary: #D31145;
-            --secondary: #000;
-            --light: #f8f9fa;
-            --dark: #212529;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: var(--dark);
-        }
-        header {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            padding: 15px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo {
-            height: 50px;
-        }
-        .nav-links {
-            display: flex;
-            align-items: center;
-        }
-        .nav-links a {
-            color: var(--secondary);
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-        .cart-icon {
-            position: relative;
-        }
-        .cart-count {
-            position: absolute;
-            top: -8px;
-            right: -8px;
-            background: var(--primary);
-            color: white;
-            border-radius: 50%;
-            width: 18px;
-            height: 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-        }
-        .hero {
-            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('sports-hero.jpg');
-            height: 500px;
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            color: white;
-        }
-        .hero-content {
-            max-width: 600px;
-        }
-        .btn {
-            background: var(--primary);
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            font-size: 1.1em;
-            cursor: pointer;
-            border-radius: 4px;
-            transition: background 0.3s;
-        }
-        .btn:hover {
-            background: #b00e3a;
-        }
-        .section-title {
-            text-align: center;
-            margin-bottom: 40px;
-            font-size: 2em;
-        }
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-        .product-card {
-            border: 1px solid #e1e1e1;
-            border-radius: 8px;
-            padding: 15px;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-        .product-image {
-            width: 100%;
-            height: 200px;
-            object-fit: contain;
-            margin-bottom: 15px;
-        }
-        .product-title {
-            font-size: 1.1em;
-            margin: 10px 0;
-        }
-        .product-price {
-            color: var(--primary);
-            font-weight: bold;
-            font-size: 1.2em;
-            margin: 10px 0;
-        }
-        .categories {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin: 30px 0;
-        }
-        .category-btn {
-            background: var(--light);
-            border: 1px solid #ddd;
-            padding: 8px 20px;
-            border-radius: 20px;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        .category-btn:hover, .category-btn.active {
-            background: var(--primary);
-            color: white;
-            border-color: var(--primary);
-        }
-        footer {
-            background-color: var(--dark);
-            color: white;
-            padding: 50px 0 20px;
-            margin-top: 50px;
-        }
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin-bottom: 30px;
-        }
-        .footer-column h3 {
-            margin-bottom: 20px;
-            font-size: 1.2em;
-        }
-        .footer-column a {
-            color: #adb5bd;
-            text-decoration: none;
-            display: block;
-            margin-bottom: 10px;
-            transition: color 0.3s;
-        }
-        .footer-column a:hover {
-            color: white;
-        }
-        .copyright {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid #495057;
-            color: #adb5bd;
-            font-size: 0.9em;
-        }
-        @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-            }
-            .nav-links {
-                margin-top: 15px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            .nav-links a {
-                margin: 5px 10px;
-            }
-            .hero {
-                height: 400px;
-                text-align: center;
-            }
-            .hero-content {
-                margin: 0 auto;
-                text-align: center;
-            }
-        }
-    </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ProShop Egypt</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #333;
+      line-height: 1.6;
+      background: #f7f7f7;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 0 20px;
+    }
+
+    .header {
+      background-color: #111;
+      color: #fff;
+      padding: 20px 0;
+    }
+
+    .header .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .nav {
+      margin-top: 10px;
+    }
+
+    .nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav a:hover {
+      color: #00bcd4;
+    }
+
+    .hero {
+      background: url('https://images.unsplash.com/photo-1609336464007-389b293c8df6?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      color: #fff;
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .hero h2 {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #00bcd4;
+      color: #fff;
+      padding: 12px 25px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #019bab;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 36px;
+      margin: 50px 0 30px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+    }
+
+    .product-card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+      padding: 20px;
+    }
+
+    .product-card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .product-card h3 {
+      margin: 15px 0 5px;
+    }
+
+    .product-card p {
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+
+    .product-card button {
+      background: #00bcd4;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .product-card button:hover {
+      background: #019bab;
+    }
+
+    .footer {
+      background: #111;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <img src="proshop-logo.png" alt="ProShop Logo" class="logo">
-                <nav class="nav-links">
-                    <a href="#">Home</a>
-                    <a href="#">Shop</a>
-                    <a href="#">Brands</a>
-                    <a href="#">Sale</a>
-                    <a href="#">About Us</a>
-                    <a href="#">Contact</a>
-                    <a href="#"><i class="fas fa-user"></i> Account</a>
-                    <a href="#" class="cart-icon">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span class="cart-count">0</span>
-                    </a>
-                </nav>
-            </div>
-        </div>
-    </header>
+  <header class="header">
+    <div class="container">
+      <h1 class="logo">ProShop Egypt</h1>
+      <nav class="nav">
+        <a href="#">Home</a>
+        <a href="#">Shop</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1 style="font-size: 2.5em; margin-bottom: 20px;">Premium Sports Equipment in Egypt</h1>
-                <p style="font-size: 1.2em; margin-bottom: 30px;">Get 20% off your first order with code PRO20</p>
-                <button class="btn">Shop Now</button>
-            </div>
-        </div>
-    </section>
+  <section class="hero">
+    <div class="container">
+      <h2>Top Gear for Champions</h2>
+      <p>Get the best sports equipment in Egypt</p>
+      <a href="#" class="btn">Shop Now</a>
+    </div>
+  </section>
 
-    <section class="container" style="padding: 60px 0;">
-        <h2 class="section-title">Featured Products</h2>
-        
-        <div class="categories">
-            <button class="category-btn active">All</button>
-            <button class="category-btn">Football</button>
-            <button class="category-btn">Basketball</button>
-            <button class="category-btn">Fitness</button>
-            <button class="category-btn">Running</button>
-            <button class="category-btn">Tennis</button>
+  <section class="products">
+    <div class="container">
+      <h2 class="section-title">Featured Products</h2>
+      <div class="product-grid">
+        <div class="product-card">
+          <img src="https://via.placeholder.com/200x200?text=Football" alt="Football" />
+          <h3>Pro Football</h3>
+          <p>EGP 499</p>
+          <button>Buy Now</button>
         </div>
-        
-        <div class="products-grid">
-            <!-- Product 1 -->
-            <div class="product-card">
-                <img src="football.jpg" alt="Adidas Football" class="product-image">
-                <h3 class="product-title">Adidas Competition Football</h3>
-                <p class="product-description">Official match ball with high-performance design</p>
-                <div class="product-price">1,200 EGP</div>
-                <button class="btn" style="width: 100%;">Add to Cart</button>
-            </div>
-            
-            <!-- Product 2 -->
-            <div class="product-card">
-                <img src="running-shoes.jpg" alt="Nike Running Shoes" class="product-image">
-                <h3 class="product-title">Nike Air Zoom Running Shoes</h3>
-                <p class="product-description">Responsive cushioning for maximum speed</p>
-                <div class="product-price">2,500 EGP</div>
-                <button class="btn" style="width: 100%;">Add to Cart</button>
-            </div>
-            
-            <!-- Product 3 -->
-            <div class="product-card">
-                <img src="yoga-mat.jpg" alt="Yoga Mat" class="product-image">
-                <h3 class="product-title">Professional Yoga Mat</h3>
-                <p class="product-description">Non-slip, eco-friendly material</p>
-                <div class="product-price">750 EGP</div>
-                <button class="btn" style="width: 100%;">Add to Cart</button>
-            </div>
-            
-            <!-- Product 4 -->
-            <div class="product-card">
-                <img src="basketball.jpg" alt="Basketball" class="product-image">
-                <h3 class="product-title">Wilson NBA Basketball</h3>
-                <p class="product-description">Official size and weight</p>
-                <div class="product-price">1,100 EGP</div>
-                <button class="btn" style="width: 100%;">Add to Cart</button>
-            </div>
+        <div class="product-card">
+          <img src="https://via.placeholder.com/200x200?text=Tennis+Racket" alt="Tennis Racket" />
+          <h3>Tennis Racket</h3>
+          <p>EGP 699</p>
+          <button>Buy Now</button>
         </div>
-    </section>
+        <div class="product-card">
+          <img src="https://via.placeholder.com/200x200?text=Running+Shoes" alt="Running Shoes" />
+          <h3>Running Shoes</h3>
+          <p>EGP 899</p>
+          <button>Buy Now</button>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <section style="background: var(--light); padding: 60px 0;">
-        <div class="container">
-            <h2 class="section-title">Why Choose ProShop?</h2>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; text-align: center;">
-                <div>
-                    <i class="fas fa-truck" style="font-size: 2.5em; color: var(--primary); margin-bottom: 15px;"></i>
-                    <h3>Fast Delivery</h3>
-                    <p>Across Egypt within 2-5 business days</p>
-                </div>
-                <div>
-                    <i class="fas fa-shield-alt" style="font-size: 2.5em; color: var(--primary); margin-bottom: 15px;"></i>
-                    <h3>Quality Guarantee</h3>
-                    <p>Authentic products from top brands</p>
-                </div>
-                <div>
-                    <i class="fas fa-exchange-alt" style="font-size: 2.5em; color: var(--primary); margin-bottom: 15px;"></i>
-                    <h3>Easy Returns</h3>
-                    <p>14-day return policy</p>
-                </div>
-                <div>
-                    <i class="fas fa-headset" style="font-size: 2.5em; color: var(--primary); margin-bottom: 15px;"></i>
-                    <h3>24/7 Support</h3>
-                    <p>Dedicated customer service</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>Shop</h3>
-                    <a href="#">Football</a>
-                    <a href="#">Basketball</a>
-                    <a href="#">Fitness</a>
-                    <a href="#">Running</a>
-                    <a href="#">Tennis</a>
-                </div>
-                <div class="footer-column">
-                    <h3>Customer Service</h3>
-                    <a href="#">Contact Us</a>
-                    <a href="#">FAQs</a>
-                    <a href="#">Shipping Policy</a>
-                    <a href="#">Returns & Exchanges</a>
-                    <a href="#">Payment Methods</a>
-                </div>
-                <div class="footer-column">
-                    <h3>About ProShop</h3>
-                    <a href="#">Our Story</a>
-                    <a href="#">Store Locations</a>
-                    <a href="#">Careers</a>
-                    <a href="#">Terms & Conditions</a>
-                    <a href="#">Privacy Policy</a>
-                </div>
-                <div class="footer-column">
-                    <h3>Connect With Us</h3>
-                    <a href="#"><i class="fab fa-facebook-f"></i> Facebook</a>
-                    <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
-                    <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
-                    <a href="#"><i class="fab fa-youtube"></i> YouTube</a>
-                    <a href="#"><i class="fab fa-tiktok"></i> TikTok</a>
-                </div>
-            </div>
-            <div class="copyright">
-                &copy; 2023 ProShop Egypt. All Rights Reserved.
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Simple cart counter functionality
-        document.querySelectorAll('.btn').forEach(button => {
-            if (button.textContent.includes('Add to Cart')) {
-                button.addEventListener('click', function() {
-                    const cartCount = document.querySelector('.cart-count');
-                    let count = parseInt(cartCount.textContent);
-                    cartCount.textContent = count + 1;
-                    
-                    // Change button text temporarily
-                    const originalText = this.textContent;
-                    this.textContent = 'Added!';
-                    this.style.backgroundColor = '#28a745';
-                    
-                    setTimeout(() => {
-                        this.textContent = originalText;
-                        this.style.backgroundColor = '';
-                    }, 2000);
-                });
-            }
-        });
-        
-        // Category filter functionality
-        document.querySelectorAll('.category-btn').forEach(button => {
-            button.addEventListener('click', function() {
-                document.querySelectorAll('.category-btn').forEach(btn => {
-                    btn.classList.remove('active');
-                });
-                this.classList.add('active');
-                // Actual filtering would be implemented with more JavaScript
-                // or connected to a backend system
-            });
-        });
-    </script>
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 ProShop Egypt. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>
